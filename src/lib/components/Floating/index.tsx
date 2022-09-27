@@ -2,12 +2,12 @@ import type { Placement } from '@floating-ui/core';
 import {
   autoUpdate,
   useClick,
+  useDismiss,
   useFloating,
   useFocus,
   useHover,
   useInteractions,
   useRole,
-  useDismiss
 } from '@floating-ui/react-dom-interactions';
 import classNames from 'classnames';
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
@@ -90,7 +90,7 @@ export const Floating: FC<FloatingProps> = ({
     useFocus(context),
     useHover(context, { enabled: trigger === 'hover' }),
     useRole(context, { role: 'tooltip' }),
-    useDismiss(context)
+    useDismiss(context, { referencePointerDown: true }),
   ]);
 
   useEffect(() => {
@@ -118,6 +118,9 @@ export const Floating: FC<FloatingProps> = ({
             position: strategy,
             top: y ?? ' ',
             left: x ?? ' ',
+          },
+          onClick() {
+            setOpen(false);
           },
           ...theirProps,
         })}

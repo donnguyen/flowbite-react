@@ -12,7 +12,7 @@ cypress/videos
 
 # production
 /build
-/lib
+# /lib
 
 # misc
 .idea
