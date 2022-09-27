@@ -120,6 +120,7 @@ export const Floating: FC<FloatingProps> = ({
             left: x ?? ' ',
           },
           onClick() {
+            console.log('Test');
             setOpen(false);
           },
           ...theirProps,
