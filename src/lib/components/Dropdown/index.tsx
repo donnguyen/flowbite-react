@@ -39,7 +39,9 @@ export interface FlowbiteDropdownTheme {
   divider: string;
 }
 
-export interface DropdownProps extends PropsWithChildren<Pick<FloatingProps, 'placement' | 'trigger'>>, ButtonProps {
+export interface DropdownProps
+  extends PropsWithChildren<Pick<FloatingProps, 'placement' | 'trigger' | 'dismissOnClick'>>,
+    ButtonProps {
   label: ReactNode;
   inline?: boolean;
   floatingArrow?: boolean;
