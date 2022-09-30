@@ -46,6 +46,7 @@ export interface FloatingProps extends PropsWithChildren<Omit<ComponentProps<'di
   style?: 'dark' | 'light' | 'auto';
   animation?: false | `duration-${number}`;
   arrow?: boolean;
+  dismissOnClick?: boolean;
 }
 
 /**
@@ -60,6 +61,7 @@ export const Floating: FC<FloatingProps> = ({
   placement = 'top',
   style = 'dark',
   trigger = 'hover',
+  dismissOnClick = true,
   ...props
 }) => {
   const theirProps = excludeClassName(props);
@@ -120,7 +122,7 @@ export const Floating: FC<FloatingProps> = ({
             left: x ?? ' ',
           },
           onClick() {
-            setOpen(false);
+            dismissOnClick && setOpen(false);
           },
           ...theirProps,
         })}

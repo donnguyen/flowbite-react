@@ -30,6 +30,7 @@ export interface FloatingProps extends PropsWithChildren<Omit<ComponentProps<'di
     style?: 'dark' | 'light' | 'auto';
     animation?: false | `duration-${number}`;
     arrow?: boolean;
+    dismissOnClick?: boolean;
 }
 /**
  * @see https://floating-ui.com/docs/react-dom-interactions
