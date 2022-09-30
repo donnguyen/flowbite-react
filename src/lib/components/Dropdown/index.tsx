@@ -87,6 +87,7 @@ const DropdownComponent: FC<DropdownProps> = ({ children, ...props }) => {
       arrow={floatingArrow}
       trigger={trigger}
       theme={theme.floating}
+      dismissOnClick={props.dismissOnClick}
     >
       <TriggerWrapper>
         {label}
