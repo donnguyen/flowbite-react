@@ -92,7 +92,7 @@ export const Floating: FC<FloatingProps> = ({
     useFocus(context),
     useHover(context, { enabled: trigger === 'hover' }),
     useRole(context, { role: 'tooltip' }),
-    useDismiss(context, { referencePointerDown: true }),
+    useDismiss(context),
   ]);
 
   useEffect(() => {
